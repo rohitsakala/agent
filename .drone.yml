@@ -2,14 +2,14 @@
 pipeline:
   build:
     privileged: true
-    image: rancher/dapper:1.11.2
+    image: rancher/dapper:0.5.7
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     commands:
     - dapper ci
 
   stage-binaries:
-    image: rancher/dapper:1.11.2
+    image: rancher/dapper:0.5.7
     commands:
     - cp -r ./bin/* ./package/
     when:
